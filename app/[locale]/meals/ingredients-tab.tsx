@@ -30,7 +30,9 @@ import {
 } from '@/components/ui/table'
 import { TablePagination } from '@/components/table-pagination'
 import { MEALS_INGREDIENTS_PAGE_PARAM } from '@/lib/meals-search'
-import { createIngredient, updateIngredient } from './actions'
+import { cn } from '@/lib/utils'
+import { createIngredient, updateIngredient, deleteIngredient } from './actions'
+import { DeleteWithConfirm } from '@/components/delete-with-confirm'
 import { MealsTabNameSearch } from './meals-tab-name-search'
 import type { Ingredient, IngredientType } from '@/lib/types'
 
@@ -215,8 +217,36 @@ export function IngredientsTab({
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="right" style={{ maxWidth: '520px' }} className="flex flex-col">
-          <SheetHeader className="shrink-0 px-6 pt-6 pb-0">
-            <SheetTitle>{editing ? t('ingredientsList.editIngredient') : t('ingredients.addIngredient')}</SheetTitle>
+          <SheetHeader
+            className={cn(
+              'shrink-0 px-6 pt-4 pb-0',
+              editing && 'flex flex-row items-center gap-2 pr-14',
+            )}
+          >
+            <SheetTitle className={cn(editing && 'min-w-0 flex-1')}>
+              {editing ? t('ingredientsList.editIngredient') : t('ingredients.addIngredient')}
+            </SheetTitle>
+            {editing && (
+              <div className="shrink-0">
+                <DeleteWithConfirm
+                  itemLabel={editing.name}
+                  labels={{
+                    deleteItem: t('ingredientsList.deleteIngredient'),
+                    confirmTitle: t('ingredientsList.deleteIngredientTitle'),
+                    confirmDescription: t('ingredientsList.deleteIngredientDescription'),
+                    confirmButton: tCommon('delete'),
+                    cancelButton: tCommon('cancel'),
+                    deleting: tCommon('deleting'),
+                  }}
+                  onConfirm={async () => {
+                    const { error } = await deleteIngredient(editing.id)
+                    if (error) { setSaveError(error); throw new Error(error) }
+                    setOpen(false)
+                    router.refresh()
+                  }}
+                />
+              </div>
+            )}
           </SheetHeader>
 
           <div className="flex-1 min-h-0 overflow-y-auto px-6 py-6">

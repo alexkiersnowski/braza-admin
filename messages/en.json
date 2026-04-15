@@ -14,6 +14,9 @@
     "delete": "Delete",
     "none": "None",
     "saving": "Saving…",
+    "confirmDelete": "Confirm delete",
+    "cancelDelete": "Cancel",
+    "deleting": "Deleting…",
     "pageOf": "Page {page} of {total}",
     "rows": "{count} rows",
     "records": "{count} records",
@@ -112,6 +115,9 @@
     "addOrder": "Add Order",
     "editOrder": "Edit Order",
     "saveChanges": "Save Changes",
+    "deleteOrder": "Delete order",
+    "deleteOrderTitle": "Delete order?",
+    "deleteOrderDescription": "This will permanently remove the order and its production rows. This can't be undone.",
     "thisWeek": "This week",
     "metrics": {
       "totalOrders": "Total orders this week",
@@ -232,7 +238,10 @@
       "selectProtein": "Select protein…",
       "selectBase": "Select base…",
       "selectSide": "Select side recipe…",
-      "placeholder": "e.g. Chicken & Rice"
+      "placeholder": "e.g. Chicken & Rice",
+      "deleteMeal": "Delete meal",
+      "deleteMealTitle": "Delete meal?",
+      "deleteMealDescription": "This meal will be removed from the list. Existing production rows are unaffected."
     },
     "sideRecipesList": {
       "addSideRecipe": "Add Side Recipe",
@@ -252,7 +261,10 @@
       "searchIngredients": "Search ingredients…",
       "noIngredientFound": "No ingredient found.",
       "optional": "Optional",
-      "placeholder": "e.g. Roasted vegetables"
+      "placeholder": "e.g. Roasted vegetables",
+      "deleteSideRecipe": "Delete side recipe",
+      "deleteSideRecipeTitle": "Delete side recipe?",
+      "deleteSideRecipeDescription": "This side recipe will be removed from the list. Existing production rows are unaffected."
     },
     "ingredientsList": {
       "editIngredient": "Edit Ingredient",
@@ -267,6 +279,9 @@
       "cookedKcal": "Cooked kcal per 100g",
       "required": "Required",
       "placeholder": "e.g. Chicken breast",
+      "deleteIngredient": "Delete ingredient",
+      "deleteIngredientTitle": "Delete ingredient?",
+      "deleteIngredientDescription": "This ingredient will be removed from the list. Existing production rows are unaffected.",
       "yieldFactor": "Yield factor",
       "yieldFactorHint": "Cooked weight ÷ raw weight. 1kg raw beef → 650g cooked = 0.65. 100g raw rice → 250g cooked = 2.5. No shrinkage = 1.0"
     }

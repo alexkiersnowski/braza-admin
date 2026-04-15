@@ -52,6 +52,7 @@ export interface Ingredient {
   cooked_kcal_per_100g: number | null
   cooked_protein_g_per_100g: number | null
   yield_factor: number
+  deleted_at?: string | null
 }
 
 export interface SideRecipeIngredient {
@@ -69,6 +70,7 @@ export interface SideRecipe {
   name: string
   total_kcal_per_portion: number | null
   side_recipe_ingredients?: SideRecipeIngredient[]
+  deleted_at?: string | null
 }
 
 export interface Meal {
@@ -81,6 +83,7 @@ export interface Meal {
   protein?: Ingredient
   base?: Ingredient
   side?: SideRecipe
+  deleted_at?: string | null
 }
 
 export interface MealTemplate {

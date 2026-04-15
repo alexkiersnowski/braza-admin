@@ -14,6 +14,9 @@
     "delete": "Usuń",
     "none": "Brak",
     "saving": "Zapisywanie…",
+    "confirmDelete": "Potwierdź usunięcie",
+    "cancelDelete": "Anuluj",
+    "deleting": "Usuwanie…",
     "pageOf": "Strona {page} z {total}",
     "rows": "{count} wierszy",
     "records": "{count} rekordów",
@@ -112,6 +115,9 @@
     "addOrder": "Dodaj zamówienie",
     "editOrder": "Edytuj zamówienie",
     "saveChanges": "Zapisz zmiany",
+    "deleteOrder": "Usuń zamówienie",
+    "deleteOrderTitle": "Usunąć zamówienie?",
+    "deleteOrderDescription": "Spowoduje to trwałe usunięcie zamówienia i jego wierszy produkcji. Tej operacji nie można cofnąć.",
     "thisWeek": "Ten tydzień",
     "metrics": {
       "totalOrders": "Zamówienia w tym tygodniu",
@@ -232,7 +238,10 @@
       "selectProtein": "Wybierz białko…",
       "selectBase": "Wybierz bazę…",
       "selectSide": "Wybierz przepis na dodatek…",
-      "placeholder": "np. Kurczak & Ryż"
+      "placeholder": "np. Kurczak & Ryż",
+      "deleteMeal": "Usuń posiłek",
+      "deleteMealTitle": "Usunąć posiłek?",
+      "deleteMealDescription": "Posiłek zostanie usunięty z listy. Istniejące wiersze produkcji nie zostaną zmienione."
     },
     "sideRecipesList": {
       "addSideRecipe": "Dodaj przepis na dodatek",
@@ -252,7 +261,10 @@
       "searchIngredients": "Szukaj składników…",
       "noIngredientFound": "Nie znaleziono składnika.",
       "optional": "Opcjonalnie",
-      "placeholder": "np. Pieczone warzywa"
+      "placeholder": "np. Pieczone warzywa",
+      "deleteSideRecipe": "Usuń przepis na dodatek",
+      "deleteSideRecipeTitle": "Usunąć przepis na dodatek?",
+      "deleteSideRecipeDescription": "Przepis zostanie usunięty z listy. Istniejące wiersze produkcji nie zostaną zmienione."
     },
     "ingredientsList": {
       "editIngredient": "Edytuj składnik",
@@ -268,7 +280,10 @@
       "required": "Wymagane",
       "placeholder": "np. Pierś z kurczaka",
       "yieldFactor": "Współczynnik wydajności",
-      "yieldFactorHint": "Waga ugotowana ÷ waga surowa. 1kg surowej wołowiny → 650g ugotowanej = 0,65. 100g surowego ryżu → 250g ugotowanego = 2,5. Brak ubytku = 1,0"
+      "yieldFactorHint": "Waga ugotowana ÷ waga surowa. 1kg surowej wołowiny → 650g ugotowanej = 0,65. 100g surowego ryżu → 250g ugotowanego = 2,5. Brak ubytku = 1,0",
+      "deleteIngredient": "Usuń składnik",
+      "deleteIngredientTitle": "Usunąć składnik?",
+      "deleteIngredientDescription": "Składnik zostanie usunięty z listy. Istniejące wiersze produkcji nie zostaną zmienione."
     }
   },
   "settings": {

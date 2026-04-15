@@ -23,7 +23,8 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
-import { saveSideRecipe } from './actions'
+import { saveSideRecipe, deleteSideRecipe } from './actions'
+import { DeleteWithConfirm } from '@/components/delete-with-confirm'
 import { MealsTabNameSearch } from './meals-tab-name-search'
 import type { Ingredient, SideRecipe } from '@/lib/types'
 
@@ -292,8 +293,36 @@ export function SideRecipesTab({ sideRecipes, sideIngredients, searchQuery }: Pr
 
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetContent side="right" style={{ maxWidth: '520px' }} className="flex flex-col">
-          <SheetHeader className="shrink-0 px-6 pt-6 pb-0">
-            <SheetTitle>{editing ? t('sideRecipesList.editSideRecipe') : t('sideRecipesList.addSideRecipe')}</SheetTitle>
+          <SheetHeader
+            className={cn(
+              'shrink-0 px-6 pt-4 pb-0',
+              editing && 'flex flex-row items-center gap-2 pr-14',
+            )}
+          >
+            <SheetTitle className={cn(editing && 'min-w-0 flex-1')}>
+              {editing ? t('sideRecipesList.editSideRecipe') : t('sideRecipesList.addSideRecipe')}
+            </SheetTitle>
+            {editing && (
+              <div className="shrink-0">
+                <DeleteWithConfirm
+                  itemLabel={editing.name}
+                  labels={{
+                    deleteItem: t('sideRecipesList.deleteSideRecipe'),
+                    confirmTitle: t('sideRecipesList.deleteSideRecipeTitle'),
+                    confirmDescription: t('sideRecipesList.deleteSideRecipeDescription'),
+                    confirmButton: tCommon('delete'),
+                    cancelButton: tCommon('cancel'),
+                    deleting: tCommon('deleting'),
+                  }}
+                  onConfirm={async () => {
+                    const { error } = await deleteSideRecipe(editing.id)
+                    if (error) { setSaveError(error); throw new Error(error) }
+                    setOpen(false)
+                    router.refresh()
+                  }}
+                />
+              </div>
+            )}
           </SheetHeader>
 
           <div className="flex-1 min-h-0 overflow-y-auto px-6 py-6">

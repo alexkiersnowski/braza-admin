@@ -102,6 +102,33 @@ export async function updateMeal(
   return { error: null }
 }
 
+export async function deleteMeal(id: string): Promise<{ error: string | null }> {
+  const supabase = createServerClient()
+  const { error } = await supabase
+    .from('meals')
+    .update({ deleted_at: new Date().toISOString() })
+    .eq('id', id)
+  return { error: error?.message ?? null }
+}
+
+export async function deleteSideRecipe(id: string): Promise<{ error: string | null }> {
+  const supabase = createServerClient()
+  const { error } = await supabase
+    .from('side_recipes')
+    .update({ deleted_at: new Date().toISOString() })
+    .eq('id', id)
+  return { error: error?.message ?? null }
+}
+
+export async function deleteIngredient(id: string): Promise<{ error: string | null }> {
+  const supabase = createServerClient()
+  const { error } = await supabase
+    .from('ingredients')
+    .update({ deleted_at: new Date().toISOString() })
+    .eq('id', id)
+  return { error: error?.message ?? null }
+}
+
 // ── Meal Templates ─────────────────────────────────────────────────────────────
 
 export async function saveMealTemplate(

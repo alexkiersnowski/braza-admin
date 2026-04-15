@@ -58,6 +58,13 @@ export async function confirmOrder(
   return { error: null }
 }
 
+export async function deleteOrder(id: string): Promise<{ error: string | null }> {
+  const supabase = createServerClient()
+  await deleteProductionRows(id, supabase)
+  const { error } = await supabase.from('orders').delete().eq('id', id)
+  return { error: error?.message ?? null }
+}
+
 export async function cancelOrder(
   id: string
 ): Promise<{ error: string | null }> {

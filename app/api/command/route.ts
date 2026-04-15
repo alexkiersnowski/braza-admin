@@ -43,6 +43,7 @@ Your job is to parse natural language prompts and return a single JSON object (n
 - open_performance_customer_sheet: first_name, last_name (other fields optional — can be filled in the sheet)
 - edit_customer: customer identifier + at least one field to change
 - edit_order: customer identifier + at least one field to change
+- delete_order: customer identifier + order_number OR week_start (to identify which order)
 
 ## Customer schema
 - first_name, last_name, whatsapp_number: string
@@ -91,6 +92,9 @@ Edit customer:
 Edit order:
 {"action":"edit_order","data":{"customer_name":"...","whatsapp_number":"+48...","order_number":12,"week_start":"YYYY-MM-DD","fields":{"meals_per_week":"10","delivery_type":"pickup","notes":"..."}},"message":"..."}
 
+Delete order:
+{"action":"delete_order","data":{"customer_name":"...","whatsapp_number":"+48...","order_number":12},"message":"..."}
+
 Open performance customer sheet:
 {"action":"open_performance_customer_sheet","data":{"first_name":"...","last_name":"...","whatsapp_number":"...","address":"...","allergies":"...","sex":"female","age":28,"weight":65,"target_weight":60,"height":170,"activity_level":"moderate","goal":"lose_weight"},"message":"..."}
 
@@ -105,6 +109,7 @@ type CommandResponse =
   | { action: 'create_order'; data: { customer_name?: string; whatsapp_number?: string; customer_id?: string; meals_per_week: string; delivery_type: 'delivery' | 'pickup'; delivery_address?: string; notes?: string; week_start?: string }; message: string }
   | { action: 'edit_customer'; data: { customer_name?: string; whatsapp_number?: string; customer_id?: string; fields: Record<string, unknown> }; message: string }
   | { action: 'edit_order'; data: { customer_name?: string; whatsapp_number?: string; customer_id?: string; order_number?: number; week_start?: string; fields: Record<string, unknown> }; message: string }
+  | { action: 'delete_order'; data: { customer_name?: string; whatsapp_number?: string; customer_id?: string; order_number?: number; week_start?: string }; message: string }
   | { action: 'open_performance_customer_sheet'; data: Record<string, unknown>; message: string }
   | { action: 'error'; message: string }
 
@@ -332,6 +337,48 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       return NextResponse.json({ action: 'error', message: `Failed to update order: ${error.message}` })
+    }
+
+    return NextResponse.json({ message: parsed.message })
+  }
+
+  // --- delete_order ---
+  if (parsed.action === 'delete_order') {
+    const d = parsed.data
+    const resolved = await resolveCustomerForCommand(supabase, pageContext, {
+      customer_id: d.customer_id,
+      customer_name: d.customer_name,
+      whatsapp_number: d.whatsapp_number,
+    })
+    if ('error' in resolved) {
+      return NextResponse.json({ action: 'error', message: resolved.error })
+    }
+    const customerId = resolved.customerId
+
+    let orderQuery = supabase
+      .from('orders')
+      .select('id, order_number')
+      .eq('customer_id', customerId)
+
+    if (d.order_number != null) {
+      orderQuery = orderQuery.eq('order_number', d.order_number)
+    } else if (d.week_start) {
+      orderQuery = orderQuery.eq('week_start', d.week_start)
+    } else {
+      orderQuery = orderQuery.order('created_at', { ascending: false }).limit(1)
+    }
+
+    const { data: orders } = await orderQuery
+    if (!orders || orders.length === 0) {
+      return NextResponse.json({ action: 'error', message: 'No matching order found.' })
+    }
+
+    const orderId = orders[0].id
+    // Delete production rows first (FK), then the order
+    await supabase.from('production').delete().eq('order_id', orderId)
+    const { error: delError } = await supabase.from('orders').delete().eq('id', orderId)
+    if (delError) {
+      return NextResponse.json({ action: 'error', message: `Failed to delete order: ${delError.message}` })
     }
 
     return NextResponse.json({ message: parsed.message })

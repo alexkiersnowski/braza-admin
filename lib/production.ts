@@ -1,5 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { Customer, Meal, MealTemplate, Order } from '@/lib/types'
+import { getThisWeekMonday } from './utils'
 
 /** Cooked base grams for standard customers (no personal calorie target). */
 export const STANDARD_BASE_PORTION_G = 200
@@ -97,10 +98,11 @@ export async function generateProductionRows(
     return { error: `No meals configured for ${order.meals_per_week} meals/week — set them in Meals → Templates` }
   }
 
-  // 3. Fetch all meals with full joins
+  // 3. Fetch all non-deleted meals with full joins
   const { data: meals, error: mealsError } = await supabase
     .from('meals')
     .select('*, protein:ingredients!protein_id(*), base:ingredients!base_id(*), side:side_recipes!sides_id(*)')
+    .is('deleted_at', null)
     .order('name')
   if (mealsError) return { error: mealsError.message }
 
@@ -168,10 +170,13 @@ export async function regenerateAllConfirmedOrders(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   supabase: SupabaseClient<any>
 ): Promise<{ error: string | null }> {
+  // Only regenerate future weeks — current and past weeks are frozen
+  const thisWeek = getThisWeekMonday()
   const { data: orders, error: fetchError } = await supabase
     .from('orders')
     .select('id')
     .eq('status', 'confirmed')
+    .gt('week_start', thisWeek)
   if (fetchError) return { error: fetchError.message }
   if (!orders || orders.length === 0) return { error: null }
 

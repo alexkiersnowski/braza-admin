@@ -19,7 +19,8 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { updateOrder } from './actions'
+import { updateOrder, deleteOrder } from './actions'
+import { DeleteWithConfirm } from '@/components/delete-with-confirm'
 import { ORDER_DELIVERY_FEE_PLN, PORTION_TIERS } from '@/lib/calculations'
 import { CUSTOMER_TEXTAREA_100 } from '@/app/[locale]/customers/customer-field-classes'
 import type { MealsPerWeek, DeliveryType, OrderStatus } from '@/lib/types'
@@ -133,9 +134,9 @@ export function EditOrderSheet({ order, open, onOpenChange, onSaved }: EditOrder
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" style={{ maxWidth: '520px' }}>
-        <SheetHeader className="items-start pb-4 pr-14">
-          <SheetTitle className="text-balance flex flex-wrap items-center gap-x-2">
+      <SheetContent side="right" style={{ maxWidth: '520px' }} className="flex flex-col">
+        <SheetHeader className="flex flex-row items-center gap-2 pb-4 pr-14 pt-4">
+          <SheetTitle className="text-balance flex min-w-0 flex-1 flex-wrap items-center gap-x-2">
             <span>Order #{order.order_number}</span>
             {customerName ? (
               <span className="text-sm font-normal text-muted-foreground">
@@ -143,6 +144,25 @@ export function EditOrderSheet({ order, open, onOpenChange, onSaved }: EditOrder
               </span>
             ) : null}
           </SheetTitle>
+          <div className="shrink-0">
+            <DeleteWithConfirm
+              itemLabel={`Order #${order.order_number}`}
+              labels={{
+                deleteItem: t('deleteOrder'),
+                confirmTitle: t('deleteOrderTitle'),
+                confirmDescription: t('deleteOrderDescription'),
+                confirmButton: tCommon('delete'),
+                cancelButton: tCommon('cancel'),
+                deleting: tCommon('deleting'),
+              }}
+              onConfirm={async () => {
+                const { error } = await deleteOrder(order!.id)
+                if (error) { setSaveError(error); throw new Error(error) }
+                onSaved()
+                onOpenChange(false)
+              }}
+            />
+          </div>
         </SheetHeader>
 
         <div className="flex-1 min-h-0 overflow-y-auto px-6 py-6">
@@ -262,7 +282,7 @@ export function EditOrderSheet({ order, open, onOpenChange, onSaved }: EditOrder
           </div>
         </div>
 
-        <div className="shrink-0 px-6 py-4">
+        <div className="shrink-0 px-6 py-4 border-t border-border">
           {saveError && <p className="text-sm text-red-600 mb-3">{saveError}</p>}
           <Button
             type="button"

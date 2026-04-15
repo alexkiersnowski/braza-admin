@@ -26,8 +26,14 @@ const strings = {
   },
 }
 
+function readLocaleCookie(): Lang {
+  if (typeof document === 'undefined') return 'en'
+  const match = document.cookie.match(/(?:^|;\s*)NEXT_LOCALE=([^;]+)/)
+  return match?.[1] === 'pl' ? 'pl' : 'en'
+}
+
 export default function LoginPage() {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = useState<Lang>(readLocaleCookie)
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -66,7 +72,10 @@ export default function LoginPage() {
           <div className="flex items-center gap-1 text-xs font-medium">
             <button
               type="button"
-              onClick={() => setLang('en')}
+              onClick={() => {
+                document.cookie = 'NEXT_LOCALE=en; path=/; max-age=31536000; SameSite=Lax'
+                setLang('en')
+              }}
               className={`cursor-pointer ${lang === 'en' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
             >
               EN
@@ -74,7 +83,10 @@ export default function LoginPage() {
             <span className="text-gray-300">/</span>
             <button
               type="button"
-              onClick={() => setLang('pl')}
+              onClick={() => {
+                document.cookie = 'NEXT_LOCALE=pl; path=/; max-age=31536000; SameSite=Lax'
+                setLang('pl')
+              }}
               className={`cursor-pointer ${lang === 'pl' ? 'text-gray-900' : 'text-gray-400 hover:text-gray-600'}`}
             >
               PL

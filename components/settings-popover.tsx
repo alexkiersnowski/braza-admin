@@ -15,6 +15,8 @@ export function SettingsPopover() {
   const [open, setOpen] = useState(false)
 
   function switchLocale(next: string) {
+    // Persist preference — next-intl middleware reads NEXT_LOCALE on every request
+    document.cookie = `NEXT_LOCALE=${next}; path=/; max-age=31536000; SameSite=Lax`
     router.replace(pathname, { locale: next })
     setOpen(false)
   }

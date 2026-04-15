@@ -60,11 +60,13 @@ export default async function MealsPage({
   const { data: ingredientsAll } = await supabase
     .from('ingredients')
     .select('*')
+    .is('deleted_at', null)
     .order('name')
 
   let ingredientsCountQuery = supabase
     .from('ingredients')
     .select('*', { count: 'exact', head: true })
+    .is('deleted_at', null)
   if (ingredientsPattern != null) {
     ingredientsCountQuery = ingredientsCountQuery.ilike('name', ingredientsPattern)
   }
@@ -90,7 +92,7 @@ export default async function MealsPage({
   }
 
   const { from, to } = rangeForPage(ingredientsPage, TABLE_PAGE_SIZE)
-  let ingredientsTableQuery = supabase.from('ingredients').select('*').order('name')
+  let ingredientsTableQuery = supabase.from('ingredients').select('*').is('deleted_at', null).order('name')
   if (ingredientsPattern != null) {
     ingredientsTableQuery = ingredientsTableQuery.ilike('name', ingredientsPattern)
   }
@@ -100,6 +102,7 @@ export default async function MealsPage({
   const { data: sideRecipesAll } = await supabase
     .from('side_recipes')
     .select(sideRecipesSelect)
+    .is('deleted_at', null)
     .order('name')
 
   const sideRecipesList =
@@ -108,12 +111,13 @@ export default async function MealsPage({
           await supabase
             .from('side_recipes')
             .select(sideRecipesSelect)
+            .is('deleted_at', null)
             .ilike('name', sideRecipesPattern)
             .order('name')
         ).data ?? []
       : (sideRecipesAll ?? [])
 
-  let mealsQuery = supabase.from('meals').select(mealsSelect).order('name')
+  let mealsQuery = supabase.from('meals').select(mealsSelect).is('deleted_at', null).order('name')
   if (mealsPattern != null) {
     mealsQuery = mealsQuery.ilike('name', mealsPattern)
   }

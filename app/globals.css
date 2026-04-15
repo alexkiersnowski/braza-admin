@@ -13,6 +13,8 @@
   --ring: #a1a1aa;
   --input: #e4e4e7;
   --border: #e4e4e7;
+  --destructive: #dc2626;
+  --destructive-foreground: #fafafa;
 }
 
 @theme inline {
@@ -30,6 +32,8 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --font-sans: var(--font-inter);
 }
 
