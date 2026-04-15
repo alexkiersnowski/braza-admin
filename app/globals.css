@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --tertiary-foreground: #a1a1aa;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --ring: #a1a1aa;
+  --input: #e4e4e7;
+  --border: #e4e4e7;
+}
+
+@theme inline {
+  --text-md: 1rem;
+  --text-md--line-height: calc(1.5 / 1 * 1rem);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-tertiary-foreground: var(--tertiary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+.sidebar-border {
+  border-right: 0.5px solid #e5e7eb;
+}
+
+/* Radix Themes Tabs: invisible sizing span sits above the label and can steal hits */
+.meals-radix-tabs .rt-BaseTabListTriggerInnerHidden {
+  pointer-events: none;
+}
+
+.meals-radix-tabs .rt-BaseTabListTrigger {
+  cursor: pointer;
+}

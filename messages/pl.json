@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "customers": "Klienci",
+    "orders": "Zamówienia",
+    "production": "Produkcja",
+    "meals": "Posiłki",
+    "settings": "Ustawienia",
+    "logout": "Wyloguj"
+  },
+  "common": {
+    "save": "Zapisz",
+    "cancel": "Anuluj",
+    "edit": "Edytuj",
+    "delete": "Usuń",
+    "none": "Brak",
+    "saving": "Zapisywanie…",
+    "pageOf": "Strona {page} z {total}",
+    "rows": "{count} wierszy",
+    "records": "{count} rekordów",
+    "previousPage": "Poprzednia strona",
+    "nextPage": "Następna strona",
+    "tablePagination": "Paginacja tabeli"
+  },
+  "customers": {
+    "title": "Klienci",
+    "addCustomer": "Dodaj klienta",
+    "editCustomer": "Edytuj klienta",
+    "saveCustomer": "Zapisz klienta",
+    "saveChanges": "Zapisz zmiany",
+    "metrics": {
+      "total": "Wszyscy klienci",
+      "performance": "Klienci performance",
+      "standard": "Klienci standard",
+      "ordersThisWeek": "Zamówienia w tym tygodniu"
+    },
+    "table": {
+      "name": "Imię i nazwisko",
+      "phone": "Telefon",
+      "type": "Typ",
+      "exclusions": "Wykluczenia",
+      "portion": "Porcja",
+      "address": "Adres",
+      "empty": "Brak klientów."
+    },
+    "search": {
+      "placeholder": "Szukaj po imieniu lub telefonie…",
+      "clear": "Wyczyść",
+      "ariaLabel": "Szukaj klientów po imieniu lub telefonie"
+    },
+    "type": { "standard": "Standard", "performance": "Performance" },
+    "form": {
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "whatsappNumber": "Numer WhatsApp",
+      "type": "Typ",
+      "address": "Adres",
+      "allergies": "Alergie",
+      "mealExclusions": "Jakich posiłków nie jesz?",
+      "noMealsConfigured": "Brak skonfigurowanych posiłków.",
+      "sex": "Płeć",
+      "age": "Wiek",
+      "weight": "Waga (kg)",
+      "targetWeight": "Waga docelowa (kg)",
+      "height": "Wzrost (cm)",
+      "activityLevel": "Poziom aktywności",
+      "goal": "Cel",
+      "aiAssistance": "Asystent AI",
+      "aiPlaceholder": "Wklej rozmowę z klientem, aby automatycznie wypełnić pola…",
+      "preFillFields": "Wypełnij pola",
+      "preFilling": "Wypełnianie…",
+      "basicInfo": "Podstawowe informacje",
+      "performanceStats": "Statystyki performance",
+      "calculatedResults": "Wyniki obliczeń",
+      "calculateNutrition": "Oblicz odżywianie",
+      "dailyCalories": "Dzienne kalorie",
+      "dailyProtein": "Dzienne białko (g)",
+      "proteinPerMeal": "Białko na posiłek (g)",
+      "portionSize": "Porcja (g)",
+      "selectPortion": "Wybierz porcję…",
+      "proteinMultiplier": "Mnożnik białka",
+      "pricePerMeal": "Cena za posiłek (PLN)",
+      "select": "Wybierz…"
+    },
+    "sex": { "male": "Mężczyzna", "female": "Kobieta" },
+    "activityLevel": {
+      "sedentary": "Siedzący (biurko, brak ćwiczeń)",
+      "light": "Lekki (spacery, okazjonalna siłownia, 1-2x/tydzień)",
+      "moderate": "Umiarkowany (siłownia lub sport 3-4x/tydzień)",
+      "high": "Wysoki (ciężki trening 5-6x/tydzień, siłownia + sport)",
+      "veryHigh": "Bardzo wysoki (trening dwa razy dziennie lub praca fizyczna)"
+    },
+    "goal": {
+      "loseWeight": "Schudnąć",
+      "maintain": "Utrzymać wagę",
+      "gainMuscle": "Zbudować mięśnie"
+    },
+    "detail": {
+      "backToCustomers": "Klienci",
+      "whatsapp": "WhatsApp",
+      "address": "Adres",
+      "allergies": "Alergie",
+      "exclusions": "Wykluczenia",
+      "proteinPortionSize": "Porcja białka",
+      "pricePerMeal": "Cena za posiłek",
+      "addOrder": "Dodaj zamówienie",
+      "ordersHistory": "Zamówienia",
+      "noOrders": "Brak zamówień."
+    }
+  },
+  "orders": {
+    "title": "Zamówienia",
+    "addOrder": "Dodaj zamówienie",
+    "editOrder": "Edytuj zamówienie",
+    "saveChanges": "Zapisz zmiany",
+    "thisWeek": "Ten tydzień",
+    "metrics": {
+      "totalOrders": "Zamówienia w tym tygodniu",
+      "totalMeals": "Posiłki w tym tygodniu",
+      "confirmed": "Potwierdzone",
+      "pending": "Oczekujące"
+    },
+    "table": {
+      "number": "#",
+      "customer": "Klient",
+      "phone": "Telefon",
+      "meals": "Posiłki",
+      "portion": "Porcja",
+      "price": "Cena",
+      "deliveryType": "Dostawa",
+      "address": "Adres",
+      "status": "Status",
+      "paymentStatus": "Płatność",
+      "notes": "Uwagi",
+      "emptySearch": "Brak zamówień pasujących do wyszukiwania w tym tygodniu.",
+      "empty": "Brak zamówień w tym tygodniu."
+    },
+    "search": {
+      "placeholder": "Szukaj po nr zamówienia, imieniu lub telefonie",
+      "clear": "Wyczyść",
+      "ariaLabel": "Szukaj po numerze zamówienia, imieniu lub telefonie"
+    },
+    "status": {
+      "pending": "Oczekujące",
+      "confirmed": "Potwierdzone",
+      "cancelled": "Anulowane",
+      "clickToConfirm": "Kliknij, aby potwierdzić"
+    },
+    "paymentStatus": { "pending": "Oczekujące", "paid": "Opłacone" },
+    "deliveryType": { "delivery": "Dostawa", "pickup": "Odbiór" },
+    "form": {
+      "weekStart": "Początek tygodnia",
+      "mealsPerWeek": "Posiłki w tygodniu",
+      "portionSize": "Porcja (g)",
+      "pricePerMeal": "Cena za posiłek (PLN)",
+      "deliveryType": "Typ dostawy",
+      "deliveryAddress": "Adres dostawy",
+      "status": "Status",
+      "paymentStatus": "Status płatności",
+      "notes": "Uwagi",
+      "total": "Suma",
+      "deliveryFee": "Opłata za dostawę",
+      "saveOrder": "Zapisz zamówienie",
+      "customer": "Klient",
+      "selectCustomer": "Wybierz klienta…",
+      "searchCustomer": "Szukaj po imieniu lub telefonie…",
+      "noCustomerFound": "Nie znaleziono klienta.",
+      "optional": "Opcjonalnie…",
+      "address": "Adres…",
+      "deliveryWithFee": "Dostawa (+{fee} PLN)",
+      "mealsCount": "{count, plural, one {# posiłek} few {# posiłki} many {# posiłków} other {# posiłków}}"
+    }
+  },
+  "production": {
+    "title": "Produkcja",
+    "thisWeek": "Ten tydzień",
+    "shoppingList": "Lista zakupów",
+    "hideShoppingList": "Ukryj listę zakupów",
+    "shoppingListTitle": "Lista zakupów — {week}",
+    "shoppingListSubtitle": "Wszystkie wagi to surowe wagi zakupu",
+    "copyAll": "Kopiuj wszystko",
+    "copied": "Skopiowano!",
+    "sectionProteins": "Białka",
+    "sectionBases": "Bazy",
+    "sectionSides": "Dodatki",
+    "noItems": "Brak pozycji.",
+    "noRows": "Brak wierszy produkcji na ten tydzień. Potwierdź zamówienia, aby je wygenerować.",
+    "portionLabel": "{count, plural, one {# porcja} few {# porcje} many {# porcji} other {# porcji}}",
+    "table": {
+      "orderNumber": "Nr zamówienia",
+      "customer": "Klient",
+      "meal": "Posiłek",
+      "protein": "Białko (g)",
+      "base": "Baza (g)",
+      "side": "Dodatek",
+      "notes": "Uwagi"
+    }
+  },
+  "meals": {
+    "title": "Posiłki",
+    "tabs": {
+      "weeklyPlan": "Plan tygodniowy",
+      "meals": "Posiłki",
+      "sideRecipes": "Przepisy na dodatki",
+      "ingredients": "Składniki"
+    },
+    "ingredients": {
+      "name": "Nazwa",
+      "type": "Typ",
+      "calories": "Kalorie (kcal na 100g)",
+      "addIngredient": "Dodaj składnik",
+      "protein": "Białko",
+      "base": "Baza",
+      "side": "Dodatek"
+    },
+    "weeklyPlan": {
+      "description": "Przypisz posiłek do każdego slotu dla każdego rozmiaru tygodnia. Gdy zamówienie jest potwierdzone, posiłki są przypisywane w kolejności slotów (wykluczenia klientów przechodzą do następnego dozwolonego posiłku).",
+      "header": "{count} posiłków / tydzień",
+      "noMeal": "— brak posiłku —"
+    },
+    "mealsList": {
+      "addMeal": "Dodaj posiłek",
+      "editMeal": "Edytuj posiłek",
+      "saveChanges": "Zapisz zmiany",
+      "searchPlaceholder": "Szukaj po nazwie",
+      "countLabel": "{count, plural, one {# posiłek} few {# posiłki} many {# posiłków} other {# posiłków}}",
+      "noMeals": "Brak posiłków.",
+      "noMealsSearch": "Brak posiłków pasujących do wyszukiwania.",
+      "name": "Nazwa",
+      "protein": "Białko",
+      "base": "Baza",
+      "side": "Dodatek",
+      "selectProtein": "Wybierz białko…",
+      "selectBase": "Wybierz bazę…",
+      "selectSide": "Wybierz przepis na dodatek…",
+      "placeholder": "np. Kurczak & Ryż"
+    },
+    "sideRecipesList": {
+      "addSideRecipe": "Dodaj przepis na dodatek",
+      "editSideRecipe": "Edytuj przepis na dodatek",
+      "saveChanges": "Zapisz zmiany",
+      "searchPlaceholder": "Szukaj po nazwie",
+      "countLabel": "{count, plural, one {# przepis na dodatek} few {# przepisy na dodatek} many {# przepisów na dodatek} other {# przepisów na dodatek}}",
+      "noSideRecipes": "Brak przepisów na dodatki.",
+      "noSideRecipesSearch": "Brak przepisów pasujących do wyszukiwania.",
+      "name": "Nazwa",
+      "totalKcal": "Łączna ilość kcal na porcję",
+      "ingredientsLabel": "Składniki",
+      "addIngredient": "Dodaj składnik",
+      "seeAll": "Zobacz wszystkie",
+      "seeLess": "Pokaż mniej",
+      "selectIngredient": "Wybierz składnik…",
+      "searchIngredients": "Szukaj składników…",
+      "noIngredientFound": "Nie znaleziono składnika.",
+      "optional": "Opcjonalnie",
+      "placeholder": "np. Pieczone warzywa"
+    },
+    "ingredientsList": {
+      "editIngredient": "Edytuj składnik",
+      "saveChanges": "Zapisz zmiany",
+      "searchPlaceholder": "Szukaj po nazwie",
+      "countLabel": "{count, plural, one {# składnik} few {# składniki} many {# składników} other {# składników}}",
+      "noIngredients": "Brak składników.",
+      "noIngredientsSearch": "Brak składników pasujących do wyszukiwania.",
+      "kcalPer100g": "Kcal / 100g",
+      "created": "Dodano",
+      "yieldFactorCol": "Wydajność",
+      "cookedKcal": "Kcal po ugotowaniu na 100g",
+      "required": "Wymagane",
+      "placeholder": "np. Pierś z kurczaka",
+      "yieldFactor": "Współczynnik wydajności",
+      "yieldFactorHint": "Waga ugotowana ÷ waga surowa. 1kg surowej wołowiny → 650g ugotowanej = 0,65. 100g surowego ryżu → 250g ugotowanego = 2,5. Brak ubytku = 1,0"
+    }
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "language": "Język",
+    "english": "Angielski",
+    "polish": "Polski"
+  },
+  "commandBar": {
+    "chips": {
+      "newCustomer": "Nowy klient",
+      "addOrder": "Dodaj zamówienie",
+      "editCustomer": "Edytuj klienta",
+      "editOrder": "Edytuj zamówienie"
+    },
+    "placeholder": "Utwórz klienta, dodaj zamówienie, edytuj…",
+    "cancel": "Anuluj",
+    "thinking": "Myślę…",
+    "done": "Gotowe.",
+    "openingSheet": "Otwieram kartę klienta…",
+    "networkError": "Błąd sieci. Sprawdź połączenie i spróbuj ponownie.",
+    "parseError": "Nie można przetworzyć odpowiedzi serwera.",
+    "genericError": "Coś poszło nie tak."
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "nav": {
+    "customers": "Customers",
+    "orders": "Orders",
+    "production": "Production",
+    "meals": "Meals",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "none": "None",
+    "saving": "Saving…",
+    "pageOf": "Page {page} of {total}",
+    "rows": "{count} rows",
+    "records": "{count} records",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "tablePagination": "Table pagination"
+  },
+  "customers": {
+    "title": "Customers",
+    "addCustomer": "Add Customer",
+    "editCustomer": "Edit Customer",
+    "saveCustomer": "Save Customer",
+    "saveChanges": "Save Changes",
+    "metrics": {
+      "total": "Total customers",
+      "performance": "Performance customers",
+      "standard": "Standard customers",
+      "ordersThisWeek": "Orders this week"
+    },
+    "table": {
+      "name": "Name",
+      "phone": "Phone",
+      "type": "Type",
+      "exclusions": "Exclusions",
+      "portion": "Portion",
+      "address": "Address",
+      "empty": "No customers yet."
+    },
+    "search": {
+      "placeholder": "Search by name or phone…",
+      "clear": "Clear search",
+      "ariaLabel": "Search customers by name or phone"
+    },
+    "type": { "standard": "Standard", "performance": "Performance" },
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "whatsappNumber": "WhatsApp number",
+      "type": "Type",
+      "address": "Address",
+      "allergies": "Allergies",
+      "mealExclusions": "Which meals do you not eat?",
+      "noMealsConfigured": "No meals configured yet.",
+      "sex": "Sex",
+      "age": "Age",
+      "weight": "Weight (kg)",
+      "targetWeight": "Target weight (kg)",
+      "height": "Height (cm)",
+      "activityLevel": "Activity level",
+      "goal": "Goal",
+      "aiAssistance": "AI Assistance",
+      "aiPlaceholder": "Paste a customer conversation to auto-fill details…",
+      "preFillFields": "Pre-fill fields",
+      "preFilling": "Pre-filling…",
+      "basicInfo": "Basic Info",
+      "performanceStats": "Performance Stats",
+      "calculatedResults": "Calculated Results",
+      "calculateNutrition": "Calculate nutrition",
+      "dailyCalories": "Daily calories",
+      "dailyProtein": "Daily protein (g)",
+      "proteinPerMeal": "Protein per meal (g)",
+      "portionSize": "Portion size (g)",
+      "selectPortion": "Select portion…",
+      "proteinMultiplier": "Protein multiplier",
+      "pricePerMeal": "Price per meal (PLN)",
+      "select": "Select…"
+    },
+    "sex": { "male": "Male", "female": "Female" },
+    "activityLevel": {
+      "sedentary": "Sedentary (desk job, no exercise)",
+      "light": "Light (walks, occasional gym, 1-2x/week)",
+      "moderate": "Moderate (gym or sport 3-4x/week)",
+      "high": "High (hard training 5-6x/week, gym + sport)",
+      "veryHigh": "Very high (twice daily training or physical labour job)"
+    },
+    "goal": {
+      "loseWeight": "Lose weight",
+      "maintain": "Maintain",
+      "gainMuscle": "Gain muscle"
+    },
+    "detail": {
+      "backToCustomers": "Customers",
+      "whatsapp": "WhatsApp",
+      "address": "Address",
+      "allergies": "Allergies",
+      "exclusions": "Exclusions",
+      "proteinPortionSize": "Protein portion size",
+      "pricePerMeal": "Price per meal",
+      "addOrder": "Add Order",
+      "ordersHistory": "Orders",
+      "noOrders": "No orders yet."
+    }
+  },
+  "orders": {
+    "title": "Orders",
+    "addOrder": "Add Order",
+    "editOrder": "Edit Order",
+    "saveChanges": "Save Changes",
+    "thisWeek": "This week",
+    "metrics": {
+      "totalOrders": "Total orders this week",
+      "totalMeals": "Total meals this week",
+      "confirmed": "Confirmed",
+      "pending": "Pending"
+    },
+    "table": {
+      "number": "#",
+      "customer": "Customer",
+      "phone": "Phone",
+      "meals": "Meals",
+      "portion": "Portion",
+      "price": "Price",
+      "deliveryType": "Delivery",
+      "address": "Address",
+      "status": "Status",
+      "paymentStatus": "Payment",
+      "notes": "Notes",
+      "emptySearch": "No orders match your search for this week.",
+      "empty": "No orders for this week."
+    },
+    "search": {
+      "placeholder": "Search by order #, name, or phone",
+      "clear": "Clear search",
+      "ariaLabel": "Search by order number, name, or phone"
+    },
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "clickToConfirm": "Click to confirm"
+    },
+    "paymentStatus": { "pending": "Pending", "paid": "Paid" },
+    "deliveryType": { "delivery": "Delivery", "pickup": "Pickup" },
+    "form": {
+      "weekStart": "Week start",
+      "mealsPerWeek": "Meals per week",
+      "portionSize": "Portion size (g)",
+      "pricePerMeal": "Price per meal (PLN)",
+      "deliveryType": "Delivery type",
+      "deliveryAddress": "Delivery address",
+      "status": "Status",
+      "paymentStatus": "Payment status",
+      "notes": "Notes",
+      "total": "Total",
+      "deliveryFee": "Delivery fee",
+      "saveOrder": "Save Order",
+      "customer": "Customer",
+      "selectCustomer": "Select customer…",
+      "searchCustomer": "Search by name or phone…",
+      "noCustomerFound": "No customer found.",
+      "optional": "Optional…",
+      "address": "Address…",
+      "deliveryWithFee": "Delivery (+{fee} PLN)",
+      "mealsCount": "{count, plural, one {# meal} other {# meals}}"
+    }
+  },
+  "production": {
+    "title": "Production",
+    "thisWeek": "This week",
+    "shoppingList": "Shopping list",
+    "hideShoppingList": "Hide shopping list",
+    "shoppingListTitle": "Shopping list — {week}",
+    "shoppingListSubtitle": "All weights are raw purchase weights",
+    "copyAll": "Copy all",
+    "copied": "Copied!",
+    "sectionProteins": "Proteins",
+    "sectionBases": "Bases",
+    "sectionSides": "Sides",
+    "noItems": "No items to show.",
+    "noRows": "No production rows for this week. Confirm orders to generate them.",
+    "portionLabel": "{count, plural, one {# portion} other {# portions}}",
+    "table": {
+      "orderNumber": "Order #",
+      "customer": "Customer",
+      "meal": "Meal",
+      "protein": "Protein (g)",
+      "base": "Base (g)",
+      "side": "Side",
+      "notes": "Notes"
+    }
+  },
+  "meals": {
+    "title": "Meals",
+    "tabs": {
+      "weeklyPlan": "Weekly Plan",
+      "meals": "Meals",
+      "sideRecipes": "Side Recipes",
+      "ingredients": "Ingredients"
+    },
+    "ingredients": {
+      "name": "Name",
+      "type": "Type",
+      "calories": "Calories (kcal per 100g)",
+      "addIngredient": "Add Ingredient",
+      "protein": "Protein",
+      "base": "Base",
+      "side": "Side"
+    },
+    "weeklyPlan": {
+      "description": "Assign a meal to each slot for each week size. When an order is confirmed, meals are assigned in slot order (customer exclusions cycle to the next allowed meal).",
+      "header": "{count} meals / week",
+      "noMeal": "— no meal —"
+    },
+    "mealsList": {
+      "addMeal": "Add Meal",
+      "editMeal": "Edit Meal",
+      "saveChanges": "Save Changes",
+      "searchPlaceholder": "Search by name",
+      "countLabel": "{count, plural, one {# meal} other {# meals}}",
+      "noMeals": "No meals yet.",
+      "noMealsSearch": "No meals match your search.",
+      "name": "Name",
+      "protein": "Protein",
+      "base": "Base",
+      "side": "Side",
+      "selectProtein": "Select protein…",
+      "selectBase": "Select base…",
+      "selectSide": "Select side recipe…",
+      "placeholder": "e.g. Chicken & Rice"
+    },
+    "sideRecipesList": {
+      "addSideRecipe": "Add Side Recipe",
+      "editSideRecipe": "Edit Side Recipe",
+      "saveChanges": "Save Changes",
+      "searchPlaceholder": "Search by name",
+      "countLabel": "{count, plural, one {# side recipe} other {# side recipes}}",
+      "noSideRecipes": "No side recipes yet.",
+      "noSideRecipesSearch": "No side recipes match your search.",
+      "name": "Name",
+      "totalKcal": "Total kcal per portion",
+      "ingredientsLabel": "Ingredients",
+      "addIngredient": "Add ingredient",
+      "seeAll": "See all",
+      "seeLess": "See less",
+      "selectIngredient": "Select ingredient…",
+      "searchIngredients": "Search ingredients…",
+      "noIngredientFound": "No ingredient found.",
+      "optional": "Optional",
+      "placeholder": "e.g. Roasted vegetables"
+    },
+    "ingredientsList": {
+      "editIngredient": "Edit Ingredient",
+      "saveChanges": "Save Changes",
+      "searchPlaceholder": "Search by name",
+      "countLabel": "{count, plural, one {# ingredient} other {# ingredients}}",
+      "noIngredients": "No ingredients yet.",
+      "noIngredientsSearch": "No ingredients match your search.",
+      "kcalPer100g": "Kcal / 100g",
+      "created": "Created",
+      "yieldFactorCol": "Yield",
+      "cookedKcal": "Cooked kcal per 100g",
+      "required": "Required",
+      "placeholder": "e.g. Chicken breast",
+      "yieldFactor": "Yield factor",
+      "yieldFactorHint": "Cooked weight ÷ raw weight. 1kg raw beef → 650g cooked = 0.65. 100g raw rice → 250g cooked = 2.5. No shrinkage = 1.0"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "english": "English",
+    "polish": "Polish"
+  },
+  "commandBar": {
+    "chips": {
+      "newCustomer": "New customer",
+      "addOrder": "Add order",
+      "editCustomer": "Edit customer",
+      "editOrder": "Edit order"
+    },
+    "placeholder": "Create customer, add order, edit…",
+    "cancel": "Cancel",
+    "thinking": "Thinking…",
+    "done": "Done.",
+    "openingSheet": "Opening customer sheet…",
+    "networkError": "Network error. Check your connection and try again.",
+    "parseError": "Could not parse the server response.",
+    "genericError": "Something went wrong."
+  }
+}
